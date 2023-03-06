@@ -1,0 +1,60 @@
+---
+- name: "Collect System Health Score"
+  aci_rest:
+    host:           "{{ aci_host }}"
+    user:           "{{ aci_user }}"
+    password:       "{{ aci_password }}"
+    validate_certs: "{{ aci_valid_cert }}" 
+    use_ssl:        "{{ aci_use_ssl }}" 
+    path: /api/mo/topology/health.json
+    method: get
+  register: health_system
+
+- name: "Collect Fabric Health Score"
+  aci_rest:
+    host:           "{{ aci_host }}"
+    user:           "{{ aci_user }}"
+    password:       "{{ aci_password }}"
+    validate_certs: "{{ aci_valid_cert }}" 
+    use_ssl:        "{{ aci_use_ssl }}" 
+    path: /api/node/class/topSystem.json?rsp-subtree-include=health,required&rsp-subtree-filter=le(healthInst.cur,"{{ item.score }}")
+    method: get
+  with_items: 
+    - score: "{{ score }}"
+  register: health_topology
+
+- name: "Collect Each Tenant Health Score"
+  aci_rest:
+    host:           "{{ aci_host }}"
+    user:           "{{ aci_user }}"
+    password:       "{{ aci_password }}"
+    validate_certs: "{{ aci_valid_cert }}" 
+    use_ssl:        "{{ aci_use_ssl }}" 
+    path: /api/node/class/fvTenant.json?rsp-subtree-include=health,required&rsp-subtree-filter=le(healthInst.cur,"{{ item.score }}")
+    method: get
+  with_items: 
+    - score: "{{ score }}"
+  register: health_tenant
+
+- name: "Export Health Score Info to JSON"
+  copy:
+    content: "{{ item.content | to_nice_json}}"
+    dest:    "{{ item.dest }}"
+  no_log: yes
+  loop:
+    - content: "{{ health_system }}"
+      dest:    "roles/monitor_health/files/health_system.json"
+    - content: "{{ health_topology }}"
+      dest:    "roles/monitor_health/files/health_topology.json"
+    - content: "{{ health_tenant }}"
+      dest:    "roles/monitor_health/files/health_tenant.json"
+
+- name: "Verify Send Message or Not (Python Script)"
+  script: check.py
+  register: check_result
+
+- name: "Format JSON to Markdown for Sending Webex (If Needed)"
+  template: 
+    src:  "template/health_report.j2"
+    dest: "roles/call_webex/files/health_report.md"
+  when: check_result.stdout | bool

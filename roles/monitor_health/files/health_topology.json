@@ -1,0 +1,189 @@
+{
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "changed": false,
+            "failed": false,
+            "imdata": [
+                {
+                    "topSystem": {
+                        "attributes": {
+                            "address": "10.1.192.64",
+                            "bootstrapState": "done",
+                            "childAction": "",
+                            "clusterTimeDiff": "3850",
+                            "configIssues": "",
+                            "controlPlaneMTU": "1400",
+                            "currentTime": "2023-03-06T09:46:35.632+05:30",
+                            "dn": "topology/pod-1/node-1201/sys",
+                            "enforceSubnetCheck": "no",
+                            "etepAddr": "172.16.1.1",
+                            "fabricDomain": "ACI_FABRIC_1",
+                            "fabricId": "1",
+                            "fabricMAC": "00:22:BD:F8:19:FF",
+                            "id": "1201",
+                            "inbMgmtAddr": "192.168.11.24",
+                            "inbMgmtAddr6": "::",
+                            "inbMgmtAddr6Mask": "0",
+                            "inbMgmtAddrMask": "24",
+                            "inbMgmtGateway": "192.168.11.254",
+                            "inbMgmtGateway6": "0.0.0.0",
+                            "lastRebootTime": "2023-03-05T09:39:37.510+05:30",
+                            "lastResetReason": "installer",
+                            "lcOwn": "local",
+                            "modTs": "2023-03-05T09:56:19.926+05:30",
+                            "mode": "unspecified",
+                            "monPolDn": "uni/fabric/monfab-default",
+                            "name": "LEAF_1201",
+                            "nameAlias": "",
+                            "nodeType": "unspecified",
+                            "oobMgmtAddr": "10.106.236.24",
+                            "oobMgmtAddr6": "ab::10",
+                            "oobMgmtAddr6Mask": "64",
+                            "oobMgmtAddrMask": "26",
+                            "oobMgmtGateway": "10.106.236.1",
+                            "oobMgmtGateway6": "ab::1",
+                            "podId": "1",
+                            "remoteNetworkId": "0",
+                            "remoteNode": "no",
+                            "rlOperPodId": "1",
+                            "rlRoutableMode": "no",
+                            "rldirectMode": "no",
+                            "role": "leaf",
+                            "serial": "FDO23380QJM",
+                            "serverType": "unspecified",
+                            "siteId": "1",
+                            "state": "in-service",
+                            "status": "",
+                            "systemUpTime": "01:00:06:57.000",
+                            "tepPool": "10.1.0.0/16",
+                            "unicastXrEpLearnDisable": "yes",
+                            "version": "n9000-15.2(7g)",
+                            "virtualMode": "no"
+                        },
+                        "children": [
+                            {
+                                "healthInst": {
+                                    "attributes": {
+                                        "childAction": "",
+                                        "chng": "-9",
+                                        "cur": "66",
+                                        "maxSev": "cleared",
+                                        "prev": "73",
+                                        "rn": "health",
+                                        "status": "",
+                                        "twScore": "66",
+                                        "updTs": "2023-03-05T09:57:48.534+05:30"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topSystem": {
+                        "attributes": {
+                            "address": "10.1.192.67",
+                            "bootstrapState": "done",
+                            "childAction": "",
+                            "clusterTimeDiff": "3850",
+                            "configIssues": "",
+                            "controlPlaneMTU": "1400",
+                            "currentTime": "2023-03-06T09:46:35.632+05:30",
+                            "dn": "topology/pod-1/node-1202/sys",
+                            "enforceSubnetCheck": "no",
+                            "etepAddr": "172.16.1.1",
+                            "fabricDomain": "ACI_FABRIC_1",
+                            "fabricId": "1",
+                            "fabricMAC": "00:22:BD:F8:19:FF",
+                            "id": "1202",
+                            "inbMgmtAddr": "192.168.11.25",
+                            "inbMgmtAddr6": "::",
+                            "inbMgmtAddr6Mask": "0",
+                            "inbMgmtAddrMask": "24",
+                            "inbMgmtGateway": "192.168.11.254",
+                            "inbMgmtGateway6": "0.0.0.0",
+                            "lastRebootTime": "2023-03-05T08:59:39.561+05:30",
+                            "lastResetReason": "installer",
+                            "lcOwn": "local",
+                            "modTs": "2023-03-05T09:13:51.271+05:30",
+                            "mode": "unspecified",
+                            "monPolDn": "uni/fabric/monfab-default",
+                            "name": "LEAF_1202",
+                            "nameAlias": "",
+                            "nodeType": "unspecified",
+                            "oobMgmtAddr": "10.106.236.25",
+                            "oobMgmtAddr6": "ab::11",
+                            "oobMgmtAddr6Mask": "64",
+                            "oobMgmtAddrMask": "26",
+                            "oobMgmtGateway": "10.106.236.1",
+                            "oobMgmtGateway6": "ab::1",
+                            "podId": "1",
+                            "remoteNetworkId": "0",
+                            "remoteNode": "no",
+                            "rlOperPodId": "1",
+                            "rlRoutableMode": "no",
+                            "rldirectMode": "no",
+                            "role": "leaf",
+                            "serial": "FDO23380QNY",
+                            "serverType": "unspecified",
+                            "siteId": "1",
+                            "state": "in-service",
+                            "status": "",
+                            "systemUpTime": "01:00:46:56.000",
+                            "tepPool": "10.1.0.0/16",
+                            "unicastXrEpLearnDisable": "yes",
+                            "version": "n9000-15.2(7g)",
+                            "virtualMode": "no"
+                        },
+                        "children": [
+                            {
+                                "healthInst": {
+                                    "attributes": {
+                                        "childAction": "",
+                                        "chng": "-9",
+                                        "cur": "66",
+                                        "maxSev": "cleared",
+                                        "prev": "73",
+                                        "rn": "health",
+                                        "status": "",
+                                        "twScore": "66",
+                                        "updTs": "2023-03-05T09:15:17.564+05:30"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "invocation": {
+                "module_args": {
+                    "certificate_name": null,
+                    "content": null,
+                    "host": "10.106.236.54",
+                    "method": "get",
+                    "output_level": "normal",
+                    "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+                    "path": "/api/node/class/topSystem.json?rsp-subtree-include=health,required&rsp-subtree-filter=le(healthInst.cur,\"90\")",
+                    "port": null,
+                    "private_key": null,
+                    "protocol": "http",
+                    "src": null,
+                    "timeout": 30,
+                    "use_proxy": true,
+                    "use_ssl": false,
+                    "user": "jiacui",
+                    "username": "jiacui",
+                    "validate_certs": false
+                }
+            },
+            "item": {
+                "score": 90
+            },
+            "status": -1,
+            "totalCount": 2
+        }
+    ]
+}

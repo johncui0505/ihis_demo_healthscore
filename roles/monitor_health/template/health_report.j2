@@ -1,0 +1,21 @@
+# ACI Health Score Notification
+
+{% if health_system %}
+- System Health: **{{ health_system.imdata.0.fabricHealthTotal.attributes.cur }}** (max 100)
+{% endif %}
+
+{% if health_topology %}
+## Fabric Health Score
+{% for node in health_topology.results[0].imdata %}
+- Node {{ node.topSystem.attributes.name }} : **{{ node.topSystem.children.0.healthInst.attributes.cur }}**
+{% endfor %}
+{% endif %}
+
+## Tenant Health Score
+{% if health_tenant %}
+{% for node in health_tenant.results %}
+- {{ node.imdata.0.fvTenant.attributes.name }} : **{{ node.imdata.0.fvTenant.children.0.healthInst.attributes.cur }}**
+{% endfor %}
+{% endif %}
+
+## Above info based on which Health Score under {{ score }}. 
