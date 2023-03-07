@@ -1,1 +1,1 @@
-*.json
+/roles/monitor_health/files/*.json
