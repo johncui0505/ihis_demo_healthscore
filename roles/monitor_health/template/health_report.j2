@@ -13,8 +13,8 @@
 
 ## Tenant Health Score
 {% if health_tenant %}
-{% for node in health_tenant.results %}
-- {{ node.imdata.0.fvTenant.attributes.name }} : **{{ node.imdata.0.fvTenant.children.0.healthInst.attributes.cur }}**
+{% for node in health_tenant.results[0].imdata %}
+- Tenant [{{ node.fvTenant.attributes.name }}](http://{{ aci_host }}/#bTenants:{{ node.fvTenant.attributes.name }}) : **{{ node.fvTenant.children.0.healthInst.attributes.cur }}**
 {% endfor %}
 {% endif %}
 
