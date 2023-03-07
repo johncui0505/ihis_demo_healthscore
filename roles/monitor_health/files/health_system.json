@@ -15,16 +15,16 @@
             "fabricHealthTotal": {
                 "attributes": {
                     "childAction": "",
-                    "chng": "-1",
-                    "cur": "84",
+                    "chng": "1",
+                    "cur": "86",
                     "dn": "topology/health",
                     "lcOwn": "local",
                     "maxSev": "info",
-                    "modTs": "2023-03-07T07:22:36.718+05:30",
+                    "modTs": "2023-03-07T07:30:48.979+05:30",
                     "prev": "85",
                     "status": "",
                     "twScore": "0",
-                    "updTs": "2023-03-07T07:22:32.835+05:30"
+                    "updTs": "2023-03-07T07:30:45.096+05:30"
                 }
             }
         }
